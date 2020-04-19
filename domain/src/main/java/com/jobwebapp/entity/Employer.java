@@ -1,10 +1,10 @@
 package com.jobwebapp.entity;
 
+import com.jobwebapp.enums.AccountRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import javax.persistence.Entity;
 
 
 
@@ -16,5 +16,8 @@ public class Employer {
 
     private String companyName;
     private Address companyAddress;
+    private AccountRole accountRole;
+    private Offer jobOffer;
+
 
 }

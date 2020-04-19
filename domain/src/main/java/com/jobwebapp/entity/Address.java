@@ -3,11 +3,14 @@ package com.jobwebapp.entity;
 
 import lombok.*;
 
+import javax.persistence.Entity;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 @Builder
+@Entity
 public class Address {
 
     private String country;
