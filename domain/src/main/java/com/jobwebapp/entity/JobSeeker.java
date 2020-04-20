@@ -1,6 +1,7 @@
 package com.jobwebapp.entity;
 
 
+import com.jobwebapp.enums.AccountRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,9 +14,10 @@ import javax.persistence.Entity;
 @AllArgsConstructor
 @Builder
 @Entity
-public class Employee {
+public class JobSeeker {
 
     private String firstName;
     private String lastName;
+    private AccountRole accountRole = AccountRole.JOB_SEEKER;
 
 }

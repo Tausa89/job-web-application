@@ -16,7 +16,7 @@ public class Employer {
 
     private String companyName;
     private Address companyAddress;
-    private AccountRole accountRole;
+    private AccountRole accountRole = AccountRole.EMPLOYER;
     private Offer jobOffer;
 
 
