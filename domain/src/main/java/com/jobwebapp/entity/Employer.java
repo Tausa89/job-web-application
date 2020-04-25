@@ -6,18 +6,29 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 
 
 @Builder
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 public class Employer {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
     private String companyName;
-    private Address companyAddress;
+    @Column(name = "account_role")
     private AccountRole accountRole = AccountRole.EMPLOYER;
+
+
     private Offer jobOffer;
+
+    @OneToOne(mappedBy = "employer", cascade = CascadeType.ALL)
+    private Address companyAddress;
 
 
 }
