@@ -25,7 +25,7 @@ public class Employer {
     private AccountRole accountRole = AccountRole.EMPLOYER;
 
 
-    private Offer jobOffer;
+    private JobOffer jobOffer;
 
     @OneToOne(mappedBy = "employer", cascade = CascadeType.ALL)
     private Address companyAddress;

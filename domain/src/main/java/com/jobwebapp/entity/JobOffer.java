@@ -15,7 +15,7 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Offer {
+public class JobOffer {
 
     private double salary;
     private double minSalary;
