@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Builder
@@ -24,8 +25,8 @@ public class Employer {
     @Column(name = "account_role")
     private AccountRole accountRole = AccountRole.EMPLOYER;
 
-
-    private JobOffer jobOffer;
+    @OneToMany(mappedBy = "employer", cascade = CascadeType.ALL)
+    private List<JobOffer> jobOffers;
 
     @OneToOne(mappedBy = "employer", cascade = CascadeType.ALL)
     private Address companyAddress;
