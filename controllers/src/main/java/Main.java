@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.jobwebapp.*"})
-//@EntityScan(basePackages = {"com.jobwebapp.*"})
-//@EnableJpaRepositories(basePackages = {"com.jobwebapp.*"})
+@EntityScan(basePackages = {"com.jobwebapp.*"})
+@EnableJpaRepositories(basePackages = {"com.jobwebapp.*"})
 public class Main {
 
 
