@@ -23,11 +23,13 @@ public class EmployerServiceImpl implements EmployerService {
 
         Optional<Employer> employer = employerRepository.findById(id);
 
-        Employer tempEmployer = null;
+        Employer tempEmployer;
 
         if(employer.isPresent()){
 
             tempEmployer = employer.get();
+        }else {
+            throw new RuntimeException("There is no employer  with given id " + id);
         }
         return tempEmployer;
     }

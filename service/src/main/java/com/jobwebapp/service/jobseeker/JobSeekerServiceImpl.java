@@ -29,10 +29,12 @@ public class JobSeekerServiceImpl implements JobSeekerService {
 
         Optional<JobSeeker> jobSeeker = jobSeekerRepository.findById(id);
 
-        JobSeeker tempJobSeeker = null;
+        JobSeeker tempJobSeeker;
 
-        if (jobSeeker.isPresent()){
+        if (jobSeeker.isPresent()) {
             tempJobSeeker = jobSeeker.get();
+        } else {
+            throw new RuntimeException("There is no job seeker  with given id " + id);
         }
         return tempJobSeeker;
     }
