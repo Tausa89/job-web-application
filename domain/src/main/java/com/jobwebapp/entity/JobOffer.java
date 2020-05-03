@@ -1,6 +1,7 @@
 package com.jobwebapp.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.jobwebapp.enums.Contract;
 import com.jobwebapp.enums.WorkingTime;
 import lombok.AllArgsConstructor;

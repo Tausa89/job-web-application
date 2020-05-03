@@ -1,5 +1,8 @@
 package com.jobwebapp.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.jobwebapp.enums.AccountRole;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,12 +18,17 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
+@Table(name = "employer")
 public class Employer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private int id;
+    @Column(name = "company_name")
     private String companyName;
     @Column(name = "account_role")
     private AccountRole accountRole = AccountRole.EMPLOYER;
