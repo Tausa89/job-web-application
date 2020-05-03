@@ -2,6 +2,7 @@ package com.jobwebapp.service.employer;
 
 import com.jobwebapp.dao.jobseeker.EmployerRepository;
 import com.jobwebapp.entity.Employer;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,6 +13,11 @@ public class EmployerServiceImpl implements EmployerService {
 
     EmployerRepository employerRepository;
 
+
+    @Autowired
+    public EmployerServiceImpl(EmployerRepository employerRepository) {
+        this.employerRepository = employerRepository;
+    }
 
     @Override
     public List<Employer> findAll() {

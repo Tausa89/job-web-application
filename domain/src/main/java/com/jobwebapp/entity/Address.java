@@ -11,7 +11,7 @@ import javax.persistence.*;
 @ToString
 @Builder
 @Entity
-@Table(name = "address")
+@Table(name ="company_address")
 public class Address {
 
     @Id
