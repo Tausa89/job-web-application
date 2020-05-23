@@ -1,5 +1,6 @@
 package com.jobwebapp.service.employer;
 
+import com.jobwebapp.dto.EmployerDto;
 import com.jobwebapp.entity.Employer;
 import com.jobwebapp.entity.JobSeeker;
 
@@ -7,7 +8,7 @@ import java.util.List;
 
 public interface EmployerService {
 
-    List<Employer> findAll();
+    List<EmployerDto> findAll();
 
     Employer getEmployer(int id);
 

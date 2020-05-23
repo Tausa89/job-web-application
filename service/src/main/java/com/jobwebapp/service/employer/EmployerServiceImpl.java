@@ -1,10 +1,15 @@
 package com.jobwebapp.service.employer;
 
 import com.jobwebapp.dao.jobseeker.EmployerRepository;
+import com.jobwebapp.dto.ConverterDTO;
+import com.jobwebapp.dto.EmployerDto;
 import com.jobwebapp.entity.Employer;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.Convert;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,9 +25,28 @@ public class EmployerServiceImpl implements EmployerService {
     }
 
     @Override
-    public List<Employer> findAll() {
-        return employerRepository.findAll();
+    public List<EmployerDto> findAll() {
+
+        List<EmployerDto> list = new ArrayList<>();
+        List<Employer> employers = this.employerRepository.findAll();
+        for (Employer emp: employers) {
+            list.add(ConverterDTO.convert(emp));
+//            list.add(EmployerDto
+//                    .builder()
+//                    .companyName(emp.getCompanyName())
+//                    .companyAddress(emp.getCompanyAddress())
+//                    .accountRole(emp.getAccountRole())
+//                    .jobOffers(emp.getJobOffers())
+//                    .build());
+        }
+        return list;
     }
+
+
+    //    @Override
+//    public List<Employer> findAll() {
+//        return employerRepository.findAll();
+//    }
 
     @Override
     public Employer getEmployer(int id) {

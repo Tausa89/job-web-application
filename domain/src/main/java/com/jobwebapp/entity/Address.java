@@ -14,9 +14,9 @@ import javax.persistence.*;
 @ToString
 @Builder
 @Entity
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
+//@JsonIdentityInfo(
+//        generator = ObjectIdGenerators.PropertyGenerator.class,
+//        property = "id")
 @Table(name ="company_address")
 public class Address {
 
@@ -36,9 +36,8 @@ public class Address {
     @Column(name = "post_code")
     private String postCode;
 
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @MapsId
-    @JoinColumn
     private Employer employer;
 
 }

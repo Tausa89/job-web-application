@@ -1,5 +1,6 @@
 package com.jobwebapp.controller.jobseeker;
 
+import com.jobwebapp.dto.EmployerDto;
 import com.jobwebapp.entity.Employer;
 import com.jobwebapp.service.employer.EmployerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class EmployerController {
     }
 
     @GetMapping("/employer")
-    public List<Employer> findAll(){
+    public List<EmployerDto> findAll(){
 
         return employerService.findAll();
     }

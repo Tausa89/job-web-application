@@ -18,9 +18,9 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@JsonIdentityInfo(
-        generator = ObjectIdGenerators.PropertyGenerator.class,
-        property = "id")
+//@JsonIdentityInfo(
+//        generator = ObjectIdGenerators.PropertyGenerator.class,
+//        property = "id")
 @Table(name = "employer")
 public class Employer {
 
@@ -36,7 +36,8 @@ public class Employer {
     @OneToMany(mappedBy = "employer", cascade = CascadeType.ALL)
     private List<JobOffer> jobOffers;
 
-    @OneToOne(mappedBy = "employer", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "employer", cascade = CascadeType.ALL,
+                fetch = FetchType.LAZY, optional = false)
     private Address companyAddress;
 
 
