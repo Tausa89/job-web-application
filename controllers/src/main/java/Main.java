@@ -1,3 +1,8 @@
+import com.jobwebapp.dto.ConverterDTO;
+import com.jobwebapp.dto.EmployerDto;
+import com.jobwebapp.entity.Address;
+import com.jobwebapp.entity.Employer;
+import com.jobwebapp.enums.AccountRole;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
@@ -12,6 +17,7 @@ public class Main {
 
 
     public static void main(String[] args) {
+
 
         SpringApplication.run(Main.class);
 

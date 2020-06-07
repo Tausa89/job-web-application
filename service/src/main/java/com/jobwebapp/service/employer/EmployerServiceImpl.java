@@ -8,7 +8,6 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.Convert;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -28,7 +27,7 @@ public class EmployerServiceImpl implements EmployerService {
     public List<EmployerDto> findAll() {
 
         List<EmployerDto> list = new ArrayList<>();
-        List<Employer> employers = this.employerRepository.findAll();
+        List<Employer> employers = employerRepository.findAll();
         for (Employer emp: employers) {
             list.add(ConverterDTO.convert(emp));
 //            list.add(EmployerDto

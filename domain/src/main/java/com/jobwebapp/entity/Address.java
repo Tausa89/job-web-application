@@ -1,9 +1,6 @@
 package com.jobwebapp.entity;
 
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 
 import javax.persistence.*;
@@ -39,5 +36,6 @@ public class Address {
     @OneToOne(fetch = FetchType.LAZY)
     @MapsId
     private Employer employer;
+
 
 }
